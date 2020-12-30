@@ -74,9 +74,9 @@ unittest(test_all)
 
   fprintf(stderr, "mute on off\n");
   assertFalse(AMP.isMuted());
-  AMP.MuteOn();
+  AMP.muteOn();
   assertTrue(AMP.isMuted());
-  AMP.MuteOff();
+  AMP.muteOff();
   assertFalse(AMP.isMuted());
 
   fprintf(stderr, "set get volume\n");
@@ -99,11 +99,11 @@ unittest(test_all)
   }
 
   fprintf(stderr, "incr, decr\n");
-  AMP.setVOlume(0, 0);
-  for (i = 0; i < 10; i++) AMP.incr();
-  assertEqual(10, AMP.getVolume());
-  for (i = 0; i < 5; i++) AMP.decr();
-  assertEqual(5, AMP.getVolume());
+  AMP.setVolume(0, 0);
+  for (int i = 0; i < 10; i++) AMP.incr();
+  assertEqual(10, AMP.getVolume(0));
+  for (int i = 0; i < 5; i++) AMP.decr();
+  assertEqual(5, AMP.getVolume(0));
 }
 
 unittest_main()
