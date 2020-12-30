@@ -2,14 +2,14 @@
 //    FILE: M62429.cpp
 //  AUTHOR: Rob Tillaart
 // PURPOSE: Arduino library for M62429 volume control IC
-// VERSION: 0.2.0
+// VERSION: 0.2.1
 // HISTORY: See M62429.cpp2
 //     URL: https://github.com/RobTillaart/M62429
 
-// HISTORY:
-//   0.1.0: 2019-01-17 initial version
-//   0.2.0  2020-08-02 refactor
-
+//  HISTORY:
+//  0.1.0   2019-01-17  initial version
+//  0.2.0   2020-08-02  refactor
+//  0.2.1   2020-12-30  add arduino-ci + unit test
 
 #include "M62429.h"
 
