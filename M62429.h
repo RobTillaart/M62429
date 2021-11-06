@@ -15,7 +15,7 @@
 #define M62429_VERSION          (F("0.2.2"))
 
 
-// minimum pulswidth CLOCK = 1.6 us (datasheet);
+// minimum pulse width CLOCK = 1.6 us (datasheet);
 // digitalWrite takes enough time on UNO / AVR so clock_delay == 0
 // Note that if clock pulses are long enough the data pulses are too.
 #ifndef M62429_CLOCK_DELAY
