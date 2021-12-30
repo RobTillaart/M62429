@@ -54,10 +54,38 @@ See examples
 
 ## Future
 
-- Control multiple M62429 IC's with one class. This could work with one 
-shared dataPin and one clockPin per IC. An idea might be to use one PCF8575
-to have 1 dataPin and 15 clockPins. That would allow for 15 stereo channels
-or 30 mono channels. Runtime configuration mono / stereo would be cool.
+#### Mixer
+
+- Control multiple M62429 IC's 
+- One shared dataPin and clockPin per IC. 
+- use a PCF8574 / PCF8575 as selector 
+- would allow for 16 stereo or 32 mono channels. 
+Runtime configuration mono / stereo would be cool.
+
+```
+  PCF8574 or PCF8575 is used as device selector
+  AND port takes DATA and CLOCK to right M62429
+  identical schema for all 8/16 ports
+
+             PCF8575                 AND             M62429
+           +---------+              +---+          +---------+
+           |         |=======+======| & |==========| data    |
+           |         |   +===|======|   |          |         |
+   - I2C - |         |   |   |      +---+          |         |
+           |         |   |   |                     |         |
+           |         |   |   |      +---+          |         |
+           |         |   |   +======| & |==========| clock   |
+           |         |   |     +====|   |          |         |
+           |         |   |     |    +---+          |         |
+           +---------+   |     |                   +---------+
+                         |     |
+     DATA  ==============+     |
+     CLOCK ====================+
+```
+
+
+#### Other
+
 - model with one **volume(0..100%)** and one **balance(-100..100)** == **pan()**.  
 Also a **left()** and **right()** incremental balance might be added.
 This could work better than 2 separate volume channels.
@@ -67,7 +95,6 @@ This could work better than 2 separate volume channels.
 - optimize when volume is already set? 
   - e.g. average function.
   - muteOff will fail ? investigate
-
 
 **wont**
 - **muteOff()** should increase gradually.  takes too much blocking time.
