@@ -31,6 +31,20 @@ void setup()
   delay(100);
 
   start = micros();
+  AMP.setVolume(0, 10);
+  stop = micros();
+  Serial.print("setVolume: \t");
+  Serial.println(stop - start);
+  delay(100);
+
+  start = micros();
+  AMP.setVolume(0, 100);
+  stop = micros();
+  Serial.print("setVolume: \t");
+  Serial.println(stop - start);
+  delay(100);
+
+  start = micros();
   AMP.setVolume(0, 100);
   stop = micros();
   Serial.print("setVolume: \t");

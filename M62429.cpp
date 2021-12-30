@@ -52,7 +52,7 @@ int M62429::setVolume(uint8_t channel, uint8_t volume)
   if (channel == 0) _vol[0] = volume;
   if (channel == 1) _vol[1] = volume;
   if (channel == 2) _vol[0] = _vol[1] = volume;
-  return 0;
+  return M62429_OK;
 }
 
 

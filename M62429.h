@@ -28,6 +28,7 @@
 
 
 // ERROR CODES
+#define M62429_OK                    0
 #define M62429_MUTED                -1
 #define M62429_CHANNEL_ERROR        -10
 

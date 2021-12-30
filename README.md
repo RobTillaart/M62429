@@ -64,7 +64,9 @@ This could work better than 2 separate volume channels.
 - change **getVolume(both)** to return max of the two channels?
 - **Mute()** could be per channel, default = both / all.
 - **mute50()** reduces levels with 50% (rounded down?).
-- optimize when volume is already set? e.g. average function.
+- optimize when volume is already set? 
+  - e.g. average function.
+  - muteOff will fail ? investigate
 
 
 **wont**
