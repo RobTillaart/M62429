@@ -58,12 +58,16 @@ See examples
 shared dataPin and one clockPin per IC. An idea might be to use one PCF8575
 to have 1 dataPin and 15 clockPins. That would allow for 15 stereo channels
 or 30 mono channels. Runtime configuration mono / stereo would be cool.
-- model with one **volume(0..100%)** and one **balance(-100..100)**.  
+- model with one **volume(0..100%)** and one **balance(-100..100)** == **pan()**.  
 Also a **left()** and **right()** incremental balance might be added.
 This could work better than 2 separate volume channels.
 - change **getVolume(both)** to return max of the two channels?
-- **muteOff()** should increase gradually.
 - **Mute()** could be per channel, default = both / all.
 - **mute50()** reduces levels with 50% (rounded down?).
-- find a big can filled with time ...
+- optimize when volume is already set? e.g. average function.
+
+
+**wont**
+- **muteOff()** should increase gradually.  takes too much blocking time.
+
 
