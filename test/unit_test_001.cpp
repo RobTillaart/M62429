@@ -120,7 +120,7 @@ unittest(test_incr_decr)
   assertEqual(0,  AMP.getVolume(0));
   assertEqual(10, AMP.getVolume(1));
   for (int i = 0; i < 5; i++) AMP.decr(1);
-  assertEqual(5, AMP.getVolume(0));
+  assertEqual(0, AMP.getVolume(0));
   assertEqual(5, AMP.getVolume(1));
 
   fprintf(stderr, "\nincr decr channel 2\n");
