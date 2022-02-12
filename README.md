@@ -36,7 +36,7 @@ In the latter case the volume of channel 0 is used as volume of both channels.
 - **int setVolume(uint8_t channel, uint8_t volume)** 
   - channel = { 0, 1, 2 = both; volume = {0 .. 255 }
   - Note: if system is muted, no changes are made.
-- **int incr()** increment volume of both channels until max is reached.
+- **int incr()** increment volume of both channels until max (255) is reached.
 This is another way to set volume that is better suited for a rotary 
 encoder or a \[+\] button
   - Note: if system is muted, no changes are made.
@@ -52,6 +52,8 @@ GetVolume() will return the 'saved' volume value.
 
 Note: the volume goes from 0..255 while the actual steps go from 0..87.
 Therefore not every step in volume will make a "real" step (roughly 1 in 3).
+This choice is made as the range 0..255 is more often used than the 0..87 range
+and therefore better fits other sensors and devices.
 
 
 #### Error codes
@@ -107,8 +109,9 @@ Runtime configuration mono / stereo would be cool.
 #### Volume pan model
 
 - model with one **volume(0..100%)** and one **balance(-100..100)** == **pan()**.  
-Also a **left()** and **right()** incremental balance might be added.
-This could work better than 2 separate volume channels.
+- Also a **left()** and **right()** incremental balance might be added.
+
+Does this model work better than 2 separate volume channels?
 
 
 #### Other
@@ -117,8 +120,9 @@ This could work better than 2 separate volume channels.
   would be better.
 - **min()** to reduce volume to minimum of both channels.
 - **incr()** and **decr()** could have channel parameter.
-default is both (backwards compatible)
-
+  - default is both (backwards compatible)
+- create **setAttn(channel, attn)** and **getAttn()** for low level control.
+  - needs cached attn values.
 
 **wont**
 - **muteOff()** should increase gradually.  takes too much blocking time.
