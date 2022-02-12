@@ -108,7 +108,7 @@ void M62429::muteOn()
 {
   if (_muted) return;
   _muted = true;
-  setVolume(2, 0);
+  _setAttn(2, 0);
 }
 
 
