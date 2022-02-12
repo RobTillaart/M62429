@@ -170,7 +170,9 @@ unittest(test_mute)
 
   AMP.muteOff();
   assertFalse(AMP.isMuted());
-  assertEqual(10, AMP.getVolume(0));
+  assertEqual(M62429_OK, AMP.setVolume(0, 20));
+  assertEqual(20, AMP.getVolume(0));
+
 }
 
 
