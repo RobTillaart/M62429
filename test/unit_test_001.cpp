@@ -93,7 +93,7 @@ unittest(test_setVolume)
   }
 
   fprintf(stderr, "\nerror volume(3)\n");
-  assertEqual(M62429_CHANNEL_ERROR, AMP.setVolume(3, vol));
+  assertEqual(M62429_CHANNEL_ERROR, AMP.setVolume(3, 25));
 }
 
 
