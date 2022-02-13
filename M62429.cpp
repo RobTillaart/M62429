@@ -68,12 +68,12 @@ int M62429::incr(uint8_t channel)
   if (channel > 2) return M62429_CHANNEL_ERROR;
   if (_muted) return M62429_MUTED;
 
-  if ( (channel != 1) && (_vol[0] < 255))
+  if ( ((channel == 0) || (channel == 2))  && (_vol[0] < 255))
   {
     _vol[0]++;
     setVolume(0, _vol[0]);
   }
-  if ( (channel != 0) && (_vol[1] < 255))
+  if ( ((channel == 1) || (channel == 2)) && (_vol[1] < 255))
   {
     _vol[1]++;
     setVolume(1, _vol[1]);
