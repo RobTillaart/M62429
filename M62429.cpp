@@ -114,7 +114,8 @@ void M62429::muteOn()
 {
   if (_muted) return;
   _muted = true;
-  if ((_vol[0] > 0) || (_vol[1] > 0)) _setAttn(2, 0);
+  // if ((_vol[0] > 0) || (_vol[1] > 0)) _setAttn(2, 0);
+  _setAttn(2, 0);  //  mute must work unconditional.
 }
 
 
